@@ -18,7 +18,11 @@ public interface API {
     //qui renvoie quel joueur doit joueur ou partie finie
     public boolean status();
 
-    //Return 1, 2 ou 0 si match nul
+    /**
+     * Fonctioh qui donne des infos sur les vainqueur
+     * return num du joueur, si game pas fini return 0 , et si match nul ??
+     * 
+    */
     public int vainqueur();
     
     /**
