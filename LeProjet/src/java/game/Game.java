@@ -53,8 +53,8 @@ public class Game {
 	}
 
 	public int derniereAction() {
-		int last = (int) lastCell;
-		return this.;
+		int last = (int)  lastCell[1];
+		return last;
 	}
 
 	/**
