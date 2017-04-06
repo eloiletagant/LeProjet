@@ -12,6 +12,14 @@ package game;
 public class Game implements API{
 
     private int amour;
+    
+    public void Game(){
+        this.initialisation();
+        while (status()!="terminé"){ //tant que le status du jeu n'est pas sur "y'a un gagant"
+            Integer nbrJoueur = Integer.parseInt(status()); //on trnastype vers de l'int
+            
+        }
+    }
 
     @Override
     public void initialisation() {
@@ -24,8 +32,8 @@ public class Game implements API{
     }
 
     @Override
-    public boolean status() {
-        return false;
+    public String status() {
+        return null;
     }
 
     @Override

@@ -16,14 +16,23 @@ public interface API {
      */
     public void initialisation();
     
+    /**
+     * 
+     * @param numJoueur le numero du joueur ui doit jouer
+     * @param coup l'action réalisée par le joueur
+     * @return True si l'action a été effectuée
+     */
     public boolean action(int numJoueur, int coup);
     
-    //qui renvoie quel joueur doit joueur ou partie finie
-    public boolean status();
+/**
+ * //qui renvoie quel joueur doit jouer ou none ? si partie finie
+ * @return le status du jeu CAD quel joueur dois jouer ou si le jeu est terminé
+ */
+    public String status();
 
     /**
      * Fonctioh qui donne des infos sur les vainqueur
-     * return num du joueur, si game pas fini return 0 , et si match nul ??
+     * @return num du joueur, si game pas fini return 0 , et si match nul ??
      * 
     */
     public int vainqueur();
