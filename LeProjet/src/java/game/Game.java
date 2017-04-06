@@ -21,18 +21,20 @@ public class Game {
 	}
         
         public void initialisation(){
-            	this.winner = 0;
+        this.winner = 0;
 		this.lastPlayer = 0;
 		this.matrix = new byte[6][7];
 		this.lastCell = new byte[2];
         }
 
 	public boolean action(int numJoueur, int coup) {
+		
 		boolean fait =  placePawn(numJoueur, (byte) coup);
                 if (fait){
+                	System.out.println("out");
                     checkWin();  
                 }
-                return fait;
+       return fait;
 	}
 
 	private boolean placePawn(int numJoueur, byte col) {
@@ -265,19 +267,22 @@ public class Game {
 
 	public static void main(String[] args) {
 		Game p4 = new Game();
-		p4.placePawn(1, (byte) 1);
-		p4.placePawn(2, (byte) 1);
-		p4.placePawn(1, (byte) 2);
-		p4.placePawn(2, (byte) 2);
-		p4.placePawn(1, (byte) 3);
-		p4.placePawn(2, (byte) 3);
-		p4.placePawn(1, (byte) 4);
+		p4.action(1, (byte) 5);
+//		p4.action(2, (byte) 2);
+//		p4.action(1, (byte) 1);
+//		p4.action(2, (byte) 2);
+//		p4.action(1, (byte) 1);
+//		p4.action(2, (byte) 2);
+//		p4.action(1, (byte) 1);
+	
+
 	
 
 
 	
 		p4.Affichage();
-		System.out.println(p4.winner);
+		
 		p4.AffichageDebug();
+		System.out.println("Gagant: "+p4.winner);
 	}
 }
