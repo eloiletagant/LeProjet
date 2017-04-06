@@ -7,7 +7,7 @@ package game;
 
 /**
  *
- * @author Anatole
+ * @author Groupe
  */
 public interface API {
     
