@@ -38,6 +38,7 @@ public class Game {
 		        this.lastCell[0] = (byte) (i-1);
    		   	   this.lastCell[1] = (byte) (col-1);
    			   this.matrix[i-1][col-1] = (byte) numJoueur;
+   			   done = true;
    	   	break;
    		}
    		return done;
@@ -84,7 +85,26 @@ public class Game {
 	    for(int row = 0; row < matrix.length; row++){
 	        sb.append("\t<tr>\n");
 	        for(int col = 0; col < matrix[0].length; col++){
-	            sb.append("\t\t<td>" + matrix[row][col] + "</td>\n");
+	        	 byte number = matrix[row][col];
+	        	 int nombre = number;
+	        	 
+	        	 switch (nombre) {
+				case 0: //vide
+					sb.append("\t\t<td class=\"j0\"></td>\n");
+					break;
+				case 1://j1 pion
+					sb.append("\t\t<td class=\"j1\">O </td>\n");
+					break;
+				case 2://pion j2
+					sb.append("\t\t<td class=\"j2\">O </td>\n");
+					break;
+
+				default:
+					break;
+				}
+	            
+	        			
+	        			
 	        }
 	        sb.append("\t</tr>\n");
 	    }
@@ -94,8 +114,10 @@ public class Game {
 
 	public static void main(String[] args) {
 		Game p4 = new Game();
-		System.out.println(p4.placePawn(1, (byte) 3));
-		System.out.println(p4.placePawn(2, (byte) 3));
-		System.out.println(p4.Affichage());
+		p4.placePawn(1, (byte) 3);
+		p4.placePawn(2, (byte) 3);
+		p4.placePawn(1, (byte) 2);
+		p4.placePawn(2, (byte) 4);
+		p4.Affichage();
 	}
 }
