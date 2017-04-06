@@ -121,11 +121,5 @@ public class GameTest {
         fail("The test case is a prototype.");
     }
     
-    
-     @Test
-    public void valeurVainqueur() throws Exception{
-        int i = game.vainqueur();
-        assertTrue(i <=2 && i >=0);
-    }
-    
+
 }

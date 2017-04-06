@@ -5,13 +5,15 @@
  */
 package game;
 
+import interfaceAPI.API;
+
 /**
  *
  * @author Anatole
  */
-public class Game implements API{
+public class Game implements API {
 
-    private int amour;
+
     
     public void Game(){
         this.initialisation();
