@@ -24,5 +24,10 @@ public class GameTest {
 
     }
 
+    @test
+    public void valeurVainqueur() throws Exception{
+        int i = game.vainqueur();
+        assertFalse(i <=2 && i >=0 );
+    }
 
 }
