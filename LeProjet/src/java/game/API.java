@@ -21,7 +21,12 @@ public interface API {
     //Return 1,2 ou 0 si match nul
     public int vainqueur();
 
-    //renvoie chaine de charactere qui renvoie la dernière action valide du joueur si c'est 0, c'est l'initialisation
+
+    
+    /**
+     * renvoi la derniere action
+     * @return renvoie chaine de charactere qui renvoie la dernière action valide du joueur si c'est 0, c'est l'initialisation
+     */
     public int derniereAction();
 
 
