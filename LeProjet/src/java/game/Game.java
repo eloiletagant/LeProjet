@@ -9,6 +9,35 @@ package game;
  *
  * @author Anatole
  */
-public class Game {
-    
+public class Game implements API{
+
+    @Override
+    public void initialisation() {
+
+    }
+
+    @Override
+    public boolean action(int numJoueur, int coup) {
+        return false;
+    }
+
+    @Override
+    public boolean status() {
+        return false;
+    }
+
+    @Override
+    public int vainqueur() {
+        return 0;
+    }
+
+    @Override
+    public int derniereAction() {
+        return 0;
+    }
+
+    @Override
+    public String Affichage() {
+        return null;
+    }
 }
