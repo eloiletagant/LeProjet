@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
  */
 public class GameTest {
 
+    
     private Game game;
 
     @Before
