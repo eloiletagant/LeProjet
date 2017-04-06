@@ -16,14 +16,14 @@ public class Game {
 	public Game() {
 		this.winner = 0;
 		this.lastPlayer = 0;
-		this.matrix = new byte[6][7];
+		this.matrix = new byte[7][6];
 		this.lastCell = new byte[2];
 	}
         
         public void initialisation(){
         this.winner = 0;
 		this.lastPlayer = 0;
-		this.matrix = new byte[6][7];
+		this.matrix = new byte[7][6];
 		this.lastCell = new byte[2];
         }
 
@@ -39,14 +39,15 @@ public class Game {
 
 	private boolean placePawn(int numJoueur, byte col) {
    		boolean done = false;
-   		for(byte i = 5; i >=0 ; i--){
-   	   	if ( matrix[i][col-1] == 0 ){
-   	      	this.lastCell[0] = i;
-   	      	this.lastCell[1] = (byte) (col);
-   	      	this.matrix[i][col-1] = (byte) numJoueur;
-   	      	done = true;  
-   	      	break;}
-   	   	
+
+   		for(byte i = 0; i<5 ; i++){
+            if ( matrix[col-1][i] == 0 ){
+                this.lastCell[1] = i;
+                this.lastCell[0] = (byte) (col-1);
+                this.matrix[col-1][i] = (byte) numJoueur;
+                done = true;
+                break;
+            }
 //   	   	else
 //   	   			System.out.println("i->"+i);
 //		       this.lastCell[0] = (byte) (i-1);
@@ -55,7 +56,8 @@ public class Game {
 //   			   done = true;
 //   			   //break;
 //   		
-   		}return done;
+   		}
+   		return done;
    	 }
 
 
@@ -81,12 +83,14 @@ public class Game {
 	 * Affiche la matrice
 	 */
 	public void AffichageDebug() {
-		for (int i = 0; i < this.matrix.length; i++) {
-			for (int j = 0; j < this.matrix[i].length; j++) {
-				System.out.print(this.matrix[i][j] + " ");
-			}
-			System.out.println();
-		}
+
+        for(int i = 0;i<6 ;i++){
+            for (int j = 0; j<7 ;j++){
+                System.out.print(matrix[j][5-i]+" ");
+            }
+            System.out.println("");
+        }
+
 	}
 	
 	/**
@@ -96,10 +100,10 @@ public class Game {
 	public String Affichage(){
 	    StringBuilder sb = new StringBuilder();
 	    sb.append("<table>\n");
-	    for(int row = 0; row < matrix.length; row++){
+	    for(int row = 0; row < matrix[0].length; row++){
 	        sb.append("\t<tr>\n");
-	        for(int col = 0; col < matrix[0].length; col++){
-	        	 byte number = matrix[row][col];
+	        for(int col = 0; col < matrix.length; col++){
+	        	 byte number = matrix[col][5-row];
 	        	 int nombre = number;
 	        	 
 	        	 switch (nombre) {
@@ -268,19 +272,20 @@ public class Game {
 	public static void main(String[] args) {
 		Game p4 = new Game();
 		p4.action(1, (byte) 5);
-//		p4.action(2, (byte) 2);
+		p4.action(1, (byte) 5);
+		p4.action(1, (byte) 5);
+		p4.action(1, (byte) 5);
 //		p4.action(1, (byte) 1);
 //		p4.action(2, (byte) 2);
 //		p4.action(1, (byte) 1);
-//		p4.action(2, (byte) 2);
-//		p4.action(1, (byte) 1);
-	
-
-	
 
 
-	
-		p4.Affichage();
+
+
+
+        System.out.println(p4.Affichage());
+
+
 		
 		p4.AffichageDebug();
 		System.out.println("Gagant: "+p4.winner);
