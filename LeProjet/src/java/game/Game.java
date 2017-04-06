@@ -20,7 +20,7 @@ public class Game implements API{
 
     @Override
     public boolean action(int numJoueur, int coup) {
-        return false;
+        return true;
     }
 
     @Override
