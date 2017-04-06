@@ -19,6 +19,13 @@ public class Game {
 		this.matrix = new byte[6][7];
 		this.lastCell = new byte[2];
 	}
+        
+        public void initialisation(){
+            	this.winner = 0;
+		this.lastPlayer = 0;
+		this.matrix = new byte[6][7];
+		this.lastCell = new byte[2];
+        }
 
 	public boolean action(int numJoueur, int coup) {
 		return placePawn(numJoueur, (byte) coup);
