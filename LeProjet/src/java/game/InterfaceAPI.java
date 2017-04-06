@@ -23,13 +23,20 @@ public class InterfaceAPI {
         }
     }
     
-    public void routine(){
+    public void routine(int coup){
         
-        if ((((API) game).status())?=("0")){
-            ((API) game).action(1,0);                         
-        }
-        
+        if (!(((API) game).status()).equals("0")){
+            
+            if ((((API) game).status()).equals("1")){
+                ((API) game).action(2,coup);
+                ((API) game).Affichage();
+            }
+            else if ((((API) game).status()).equals("2")){
+                ((API) game).action(1,coup);
+                ((API) game).Affichage();
+            }   
+        } 
     }
     
     
-}   
+    }  
