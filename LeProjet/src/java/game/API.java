@@ -24,12 +24,15 @@ public interface API {
      */
     public boolean action(int numJoueur, int coup);
     
-    //qui renvoie quel joueur doit joueur ou partie finie
+/**
+ * //qui renvoie quel joueur doit jouer ou none ? si partie finie
+ * @return le status du jeu
+ */
     public boolean status();
 
     /**
      * Fonctioh qui donne des infos sur les vainqueur
-     * return num du joueur, si game pas fini return 0 , et si match nul ??
+     * @return num du joueur, si game pas fini return 0 , et si match nul ??
      * 
     */
     public int vainqueur();
