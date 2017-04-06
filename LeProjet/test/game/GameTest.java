@@ -88,11 +88,10 @@ public class GameTest {
     public void testVainqueur() {
         System.out.println("vainqueur");
         Game instance = new Game();
-        int expResult = 0;
         int result = instance.vainqueur();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        boolean acceptable = result <= 2 && result >=0;
+        assertTrue(acceptable);
+        fail("The method 'vainqueur' must return 0 when their is no winner, or 1 or 2 depending of the player");
     }
 
     /**
@@ -105,8 +104,7 @@ public class GameTest {
         int expResult = 0;
         int result = instance.derniereAction();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("After the initialisation, the method 'derniereAction' must return 0");
     }
 
     /**
@@ -127,7 +125,7 @@ public class GameTest {
      @Test
     public void valeurVainqueur() throws Exception{
         int i = game.vainqueur();
-        assertFalse(i <=2 && i >=0 );
+        assertTrue(i <=2 && i >=0);
     }
     
 }
