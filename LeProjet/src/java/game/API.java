@@ -24,7 +24,11 @@ public interface API {
     //renvoie chaine de charactere qui renvoie la dernière action valide du joueur si c'est 0, c'est l'initialisation
     public int derniereAction();
 
-    //affiche ce qu'il s'est passé
+
+    /**
+     * affiche ce qu'il s'est passé
+     * @return 
+     */
     public String Affichage(); 
     
 }
