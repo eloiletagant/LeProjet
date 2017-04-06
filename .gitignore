@@ -16,3 +16,4 @@ LeProjet/build/web/META-INF/MANIFEST.MF
 *.DS_Store
 LeProjet/nbproject/build-impl.xml~
 *.xml
+LeProjet/nbproject/private/private.properties
