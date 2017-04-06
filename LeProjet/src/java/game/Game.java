@@ -25,19 +25,24 @@ public class Game {
 	}
 
 	private boolean placePawn(int numJoueur, byte col) {
-		boolean done = false;
-		for (byte i = 5; i > 0; i++) {
-			if (matrix[i][col - 1] == 0) {
-				this.lastCell[0] = i;
-				this.lastCell[1] = (byte) (col - 1);
-				this.matrix[i][col - 1] = (byte) numJoueur;
-				done = true;
+   		boolean done = false;
+   		for(byte i = 5; i >=0 ;){
+   	   	if ( matrix[i][col-1] == 0 ){
+   	      	this.lastCell[0] = i;
+   	      	this.lastCell[1] = (byte) (col);
+   	      	this.matrix[i][col-1] = (byte) numJoueur;
+   	      	done = true;  
+   	      	break;
+   	   	}
+   	   	else
+		        this.lastCell[0] = (byte) (i-1);
+   		   	   this.lastCell[1] = (byte) (col-1);
+   			   this.matrix[i-1][col-1] = (byte) numJoueur;
+   	   	break;
+   		}
+   		return done;
+   	 }
 
-				break;
-			}
-		}
-		return done;
-	}
 
 	public String status() {
 		// si game fini return zero
@@ -90,6 +95,7 @@ public class Game {
 	public static void main(String[] args) {
 		Game p4 = new Game();
 		System.out.println(p4.placePawn(1, (byte) 3));
+		System.out.println(p4.placePawn(2, (byte) 3));
 		System.out.println(p4.Affichage());
 	}
 }
