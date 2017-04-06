@@ -43,16 +43,17 @@ public class Game {
    	      	this.lastCell[1] = (byte) (col);
    	      	this.matrix[i][col-1] = (byte) numJoueur;
    	      	done = true;  
-   	      	break;
-   	   	}
-   	   	else
-		       this.lastCell[0] = (byte) (i-1);
-   		   	   this.lastCell[1] = (byte) (col-1);
-   			   this.matrix[i-1][col-1] = (byte) numJoueur;
-   			   done = true;
-   	   	break;
-   		}
-   		return done;
+   	      	break;}
+   	   	
+//   	   	else
+//   	   			System.out.println("i->"+i);
+//		       this.lastCell[0] = (byte) (i-1);
+//   		   	   this.lastCell[1] = (byte) (col-1);
+//   			   this.matrix[i-1][col-1] = (byte) numJoueur;
+//   			   done = true;
+//   			   //break;
+//   		
+   		}return done;
    	 }
 
 
@@ -271,7 +272,7 @@ public class Game {
 		p4.placePawn(1, (byte) 3);
 		p4.placePawn(2, (byte) 3);
 		p4.placePawn(1, (byte) 4);
-		System.out.println(p4.placePawn(2, (byte) 3));
+	
 
 
 	
