@@ -52,14 +52,15 @@ public class Game {
 		return this.winner;
 	}
 
-	public byte[] derniereAction() {
-		return this.lastCell;
+	public int derniereAction() {
+		int last = (int) lastCell;
+		return this.;
 	}
 
 	/**
 	 * Affiche la matrice
 	 */
-	public void Affichage() {
+	public void AffichageDebug() {
 		for (int i = 0; i < this.matrix.length; i++) {
 			for (int j = 0; j < this.matrix[i].length; j++) {
 				System.out.print(this.matrix[i][j] + " ");
@@ -68,7 +69,11 @@ public class Game {
 		}
 	}
 	
-	public String toHTML(){
+	/**
+	 * Fonction qui renvoi une table HTML qui correspnd a l"tat actul du damier
+	 * @return
+	 */
+	public String Affichage(){
 	    StringBuilder sb = new StringBuilder();
 	    sb.append("<table>\n");
 	    for(int row = 0; row < matrix.length; row++){
@@ -85,7 +90,6 @@ public class Game {
 	public static void main(String[] args) {
 		Game p4 = new Game();
 		System.out.println(p4.placePawn(1, (byte) 3));
-		p4.Affichage();
-		System.out.println(p4.toHTML());
+		System.out.println(p4.Affichage());
 	}
 }
