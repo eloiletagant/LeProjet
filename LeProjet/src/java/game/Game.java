@@ -11,6 +11,8 @@ package game;
  */
 public class Game implements API{
 
+    private int amour;
+
     @Override
     public void initialisation() {
 
