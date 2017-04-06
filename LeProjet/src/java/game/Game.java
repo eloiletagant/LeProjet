@@ -24,8 +24,8 @@ public class Game implements API{
     }
 
     @Override
-    public boolean status() {
-        return false;
+    public String status() {
+        return null;
     }
 
     @Override
