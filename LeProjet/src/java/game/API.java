@@ -7,10 +7,13 @@ package game;
 
 /**
  *
- * @author Groupe
+ * @author Groupe MASTER
  */
 public interface API {
     
+    /**
+     * fonction d'nitialisation, instancie le jeu, les joueurs
+     */
     public void initialisation();
     
     public boolean action(int numJoueur, int coup);
