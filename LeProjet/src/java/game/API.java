@@ -26,9 +26,9 @@ public interface API {
     
 /**
  * //qui renvoie quel joueur doit jouer ou none ? si partie finie
- * @return le status du jeu
+ * @return le status du jeu CAD quel joueur dois jouer ou si le jeu est terminé
  */
-    public boolean status();
+    public String status();
 
     /**
      * Fonctioh qui donne des infos sur les vainqueur
