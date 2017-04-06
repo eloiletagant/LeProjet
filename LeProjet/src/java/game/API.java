@@ -27,7 +27,7 @@ public interface API {
 
     /**
      * affiche ce qu'il s'est passé
-     * @return 
+     * @return le string de l'action
      */
     public String Affichage(); 
     
