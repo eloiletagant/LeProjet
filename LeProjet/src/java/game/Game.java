@@ -16,7 +16,7 @@ public class Game {
 	public Game() {
 		this.winner = 0;
 		this.lastPlayer = 0;
-		this.matrix = new byte[7][6];
+		this.matrix = new byte[6][7];
 		this.lastCell = new byte[2];
 	}
 
@@ -84,7 +84,7 @@ public class Game {
 
 	public static void main(String[] args) {
 		Game p4 = new Game();
-		System.out.println(p4.placePawn(0, (byte) 3));
+		System.out.println(p4.placePawn(1, (byte) 3));
 		p4.Affichage();
 		System.out.println(p4.toHTML());
 	}
